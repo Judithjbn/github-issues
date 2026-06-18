@@ -1,3 +1,58 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
 
-@import 'tailwindcss';
+@layer base {
+  html,
+  body {
+    @apply bg-gray-900 text-white px-4 py-4;
+  }
+
+  h1 {
+    @apply text-4xl font-bold;
+  }
+
+  h2 {
+    @apply my-4 text-2xl font-bold text-gray-300;
+  }
+
+  h3 {
+    @apply text-xl font-bold;
+  }
+
+  h4 {
+    @apply text-lg font-bold;
+  }
+
+  h5 {
+    @apply text-base font-bold;
+  }
+
+  small {
+    @apply font-thin;
+  }
+
+  pre {
+    @apply my-2 overflow-auto rounded bg-gray-800 p-4 text-white;
+  }
+
+  a {
+    @apply text-blue-500 hover:underline;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply rounded border-b-4 border-blue-700 bg-blue-500 px-4 py-2 font-bold text-white transition-all;
+  }
+
+  .btn:hover {
+    @apply border-blue-500 bg-blue-400;
+  }
+
+  .active {
+    @apply border-0 border-blue-500 bg-blue-700;
+  }
+
+  .selected-label {
+    @apply bg-slate-700 shadow-sm shadow-white transition-all;
+  }
+}
