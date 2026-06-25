@@ -13,12 +13,26 @@
         </div>
         <!--cards-->
         <div class="mt-4 flex flex-col">
-            <p>card</p>
+           <p>card</p>
         </div>
     </div>
     <!--columna 2-->
     <div class="col-span-1">
-        <p>etiqtas</p>
+        <div class="mt-4 flex flex-col">
+            @if (_issuesFacade.labelsQuery.isPending()) {
+                <p>Loading...</p>
+            }@else if(_issuesFacade.labelsQuery.isError()){
+                <p>Error loading labels</p>
+            } @else {
+                <div class="flex flex-wrap gap-2">
+                    @for (label of _issuesFacade.labelsQuery.data(); track label.id) {
+                        <span class="rounded-md border border-white/10 px-2 py-1 text-sm">
+                            {{label.name}}
+                        </span>
+                    }
+                </div>
+            }
+        </div>
     </div>
 
 </section>
