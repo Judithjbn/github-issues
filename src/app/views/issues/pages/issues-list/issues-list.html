@@ -26,7 +26,10 @@
             } @else {
                 <div class="flex flex-wrap gap-2">
                     @for (label of _issuesFacade.labelsQuery.data(); track label.id) {
-                        <span class="rounded-md border border-white/10 px-2 py-1 text-sm">
+                        <span 
+                            class="rounded-md border px-2 py-1 text-sm cursor-pointer hover:bg-black"
+                            [ngStyle]=" { 'border-color': '#' + label.color } "
+                        >
                             {{label.name}}
                         </span>
                     }

@@ -4,10 +4,11 @@ import { Button } from "@shared/components/button/button";
 import { IssuesFacade } from '../../facades/issues.facade';
 import { RouterLink } from "@angular/router";
 import { Spinner } from "@/app/shared/components/spinner/spinner";
+import { NgStyle } from "@angular/common";
 
 @Component({
   selector: 'app-issues-list',
-  imports: [Header, Button, RouterLink, Spinner],
+  imports: [Header, Button, RouterLink, Spinner, NgStyle],
   templateUrl: './issues-list.html',
   styleUrl: './issues-list.css',
 })
