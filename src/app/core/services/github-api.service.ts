@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, Service } from '@angular/core';
-import { environment } from '../../../environments/environment.development';
-import { GitHubLabel } from '../models/github-label.model';
+import { environment } from '@environments/environment.development';
+import { GitHubLabel } from '@models/github-label.model';
 import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root'})

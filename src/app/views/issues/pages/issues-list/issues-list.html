@@ -13,14 +13,14 @@
         </div>
         <!--cards-->
         <div class="mt-4 flex flex-col">
-           <p>card</p>
+           <a routerLink="/issues-detail/123">card</a>
         </div>
     </div>
     <!--columna 2-->
     <div class="col-span-1">
         <div class="mt-4 flex flex-col">
             @if (_issuesFacade.labelsQuery.isPending()) {
-                <p>Loading...</p>
+                <app-spinner label="Cargando etiquetas" helperText="Sincronizando etiquetas..."></app-spinner>
             }@else if(_issuesFacade.labelsQuery.isError()){
                 <p>Error loading labels</p>
             } @else {
@@ -33,6 +33,7 @@
                 </div>
             }
         </div>
+    
     </div>
 
 </section>

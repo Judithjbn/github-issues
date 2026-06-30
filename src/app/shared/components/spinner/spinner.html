@@ -1,0 +1,60 @@
+<section
+  class="relative grid min-h-[50vh] place-items-center overflow-hidden rounded-[1.75rem] px-4 py-12"
+  role="status"
+  aria-live="polite"
+  [attr.aria-label]="label()"
+>
+  <div class="pointer-events-none absolute inset-0">
+    <div class="absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#03A696]/15 blur-[90px]"></div>
+    <div class="absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#F299C2]/10 blur-[70px]"></div>
+
+    <div class="absolute inset-x-8 top-1/2 h-px bg-gradient-to-r from-transparent via-[#03A696]/35 to-transparent"></div>
+    <div class="absolute inset-y-8 left-1/2 w-px bg-gradient-to-b from-transparent via-[#F299C2]/25 to-transparent"></div>
+  </div>
+  <div
+    class="relative flex w-full max-w-sm flex-col items-center gap-6 rounded-[2rem] border border-white/10 bg-[#080D0C]/70 px-8 py-9 text-center shadow-[0_0_45px_rgba(3,166,150,0.14)] backdrop-blur-xl"
+  >
+    <div class="absolute left-6 right-6 top-4 flex items-center justify-between">
+      <div class="flex gap-1.5">
+        <span class="h-1.5 w-1.5 rounded-full bg-[#F299C2] shadow-[0_0_12px_rgba(242,153,194,0.9)]"></span>
+        <span class="h-1.5 w-1.5 rounded-full bg-[#9184BF] shadow-[0_0_12px_rgba(145,132,191,0.9)]"></span>
+        <span class="h-1.5 w-1.5 rounded-full bg-[#03A696] shadow-[0_0_12px_rgba(3,166,150,0.9)]"></span>
+      </div>
+
+      <span class="text-[0.6rem] font-medium uppercase tracking-[0.35em] text-white/35">
+        SYS
+      </span>
+    </div>
+    <div class="relative mt-5 h-28 w-28">
+      <div class="absolute inset-0 rounded-full bg-[#03A696]/20 blur-2xl motion-safe:animate-pulse"></div>
+
+      <div class="absolute inset-0 rounded-full border border-white/10 bg-white/[0.03]"></div>
+
+      <div class="absolute inset-0 motion-safe:animate-[spin_1.35s_linear_infinite] motion-reduce:animate-none">
+        <div
+          class="h-full w-full rounded-full bg-[conic-gradient(from_90deg,transparent_0deg,#03A696_80deg,#F299C2_170deg,#9184BF_255deg,transparent_360deg)] shadow-[0_0_30px_rgba(3,166,150,0.35)]"
+        ></div>
+
+        <div class="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 rounded-full bg-[#F299C2] shadow-[0_0_18px_rgba(242,153,194,1)]"></div>
+      </div>
+
+      <div class="absolute inset-[9px] rounded-full border border-white/10 bg-[#080D0C]"></div>
+
+      <div class="absolute inset-[22px] rounded-full border border-[#03A696]/35 bg-[#03A696]/5 shadow-[inset_0_0_24px_rgba(3,166,150,0.18)]"></div>
+
+      <div class="absolute left-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#6BBFB7] shadow-[0_0_22px_rgba(107,191,183,0.95)]"></div>
+    </div>
+
+    <div class="space-y-2">
+      <p class="bg-gradient-to-r from-[#F299C2] via-[#9184BF] to-[#03A696] bg-clip-text text-sm font-semibold uppercase tracking-[0.32em] text-transparent">
+        {{ label() }}
+      </p>
+      @if (helperText()) {
+        <p class="text-sm text-white/50">
+          {{ helperText() }}
+        </p>
+      }
+    </div>
+    <div class="h-px w-32 bg-gradient-to-r from-transparent via-[#03A696]/70 to-transparent"></div>
+  </div>
+</section>

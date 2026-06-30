@@ -12,7 +12,7 @@ export const routes: Routes = [
           import('./views/issues/pages/issues-list/issues-list').then((m) => m.IssuesList),
       },
       {
-        path: 'issues-detail/:id',
+        path: 'issues-detail/:number',
         loadComponent: () =>
           import('./views/issues/pages/issues-detail/issues-detail').then((m) => m.IssuesDetail),
       },

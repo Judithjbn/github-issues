@@ -3,6 +3,17 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+
+    "paths": {
+      "@/*": ["./src/*"],
+      "@core/*": ["./src/app/core/*"],
+      "@shared/*": ["./src/app/shared/*"],
+      "@views/*": ["./src/app/views/*"],
+      "@services/*": ["./src/app/core/services/*"],
+      "@models/*": ["./src/app/core/models/*"],
+      "@environments/*": ["./src/environments/*"],
+    },
+
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -26,6 +37,7 @@
     },
     {
       "path": "./tsconfig.spec.json"
-    }
-  ]
+    },
+  ],
+  
 }
