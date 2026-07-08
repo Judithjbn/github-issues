@@ -20,7 +20,14 @@
                 <p>Error loading issues</p>
             } @else {
                 @for (issue of issuesFacade.issuesQuery.data(); track issue.id) {
-                    <h3>{{issue.title}}</h3>
+                    <app-card>
+                        <h3 card-title>{{issue.title}}</h3>
+                        <p>{{ issue.number }}</p>
+                        <p>{{ issue.state }}</p>
+                        <div card-action>
+                            <app-button (click)="goToDetail(issue.number)">Ver Detalle</app-button>
+                        </div>
+                    </app-card>
                 }
             }
         </div>

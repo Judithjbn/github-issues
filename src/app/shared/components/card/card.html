@@ -1,0 +1,11 @@
+<article>
+    <header>
+        <ng-content class="mb-3" select="[card-title]"></ng-content>
+    </header>
+    <section class="mb-4">
+        <ng-content></ng-content>
+    </section>
+    <footer class="flex justify-end">
+        <ng-content select="[card-actions]"></ng-content>
+    </footer>
+</article>
