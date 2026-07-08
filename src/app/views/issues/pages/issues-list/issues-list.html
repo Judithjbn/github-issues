@@ -13,19 +13,28 @@
         </div>
         <!--cards-->
         <div class="mt-4 flex flex-col">
-           <a routerLink="/issues-detail/123">card</a>
+           <!-- <a routerLink="/issues-detail/123">card</a> -->
+            @if (issuesFacade.issuesQuery.isPending()){
+                <app-spinner label="Cargando issues" helperText="Sincronizando issues..."></app-spinner>
+            }@else if (issuesFacade.issuesQuery.isError()) {
+                <p>Error loading issues</p>
+            } @else {
+                @for (issue of issuesFacade.issuesQuery.data(); track issue.id) {
+                    <h3>{{issue.title}}</h3>
+                }
+            }
         </div>
     </div>
     <!--columna 2-->
     <div class="col-span-1">
         <div class="mt-4 flex flex-col">
-            @if (_issuesFacade.labelsQuery.isPending()) {
+            @if (issuesFacade.labelsQuery.isPending()) {
                 <app-spinner label="Cargando etiquetas" helperText="Sincronizando etiquetas..."></app-spinner>
-            }@else if(_issuesFacade.labelsQuery.isError()){
+            }@else if (issuesFacade.labelsQuery.isError()){
                 <p>Error loading labels</p>
             } @else {
                 <div class="flex flex-wrap gap-2">
-                    @for (label of _issuesFacade.labelsQuery.data(); track label.id) {
+                    @for (label of issuesFacade.labelsQuery.data(); track label.id) {
                         <span 
                             class="rounded-md border px-2 py-1 text-sm cursor-pointer hover:bg-black"
                             [ngStyle]=" { 'border-color': '#' + label.color } "

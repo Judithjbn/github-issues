@@ -13,5 +13,5 @@ import { NgStyle } from "@angular/common";
   styleUrl: './issues-list.css',
 })
 export class IssuesList {
-  public readonly _issuesFacade = inject(IssuesFacade);
+  public readonly issuesFacade = inject(IssuesFacade);
 }

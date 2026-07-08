@@ -11,7 +11,14 @@ export class IssuesFacade {
 
     public readonly labelsQuery = injectQuery(() => ({
         queryKey: ['issues', 'labels'],
-        queryFn: () => lastValueFrom(this._githubApiService.getLabels()),
+        queryFn: () => lastValueFrom(this._githubApiService.getLabels()), 
         staleTime: 1000*60*5 // =5min
     }));
+
+    public readonly issuesQuery = injectQuery(() => ({
+        queryKey: ['issues', 'list'],
+        queryFn: () => lastValueFrom(this._githubApiService.getIssues()),
+        staleTime: 1000*60 // =1min
+    }))
+
 }
