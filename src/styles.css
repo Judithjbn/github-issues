@@ -41,12 +41,32 @@
 
 @layer components {
   .btn {
-    @apply rounded border-b-4 border-green-700 bg-green-500 px-4 py-2 font-bold text-black transition-all rounded-md;
-  }
+  @apply rounded-md border-b-4 px-4 py-2 font-bold transition-all;
+}
 
-  .btn:hover {
-    @apply border-green-500 bg-green-400;
-  }
+.btn-app-primary {
+  @apply border-green-700 bg-green-500 text-black;
+}
+
+.btn-app-primary:hover {
+  @apply border-green-500 bg-green-400;
+}
+
+.btn-app-secondary {
+  @apply border-pink-600 bg-pink-500 text-white;
+}
+
+.btn-app-secondary:hover {
+  @apply bg-green-300 text-black;
+}
+
+.btn-app-ghost {
+  @apply border-transparent bg-transparent text-green-500;
+}
+
+.btn-app-ghost:hover {
+  @apply bg-green-500/10;
+}
 
   .active {
     @apply border-0 border-green-500 bg-green-700;  
